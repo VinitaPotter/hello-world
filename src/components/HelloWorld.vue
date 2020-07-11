@@ -74,7 +74,7 @@ export default {
         this.city = res.data.name;
         this.latest_weather = res.data.weather[0];
         this.latest_temp = res.data.main;
-        this.weather_icon = this.latest_weather.main;
+        this.weather_icon = this.latest_weather.icon;
       });
     }
   }
@@ -102,11 +102,11 @@ export default {
   align-items: center;
   justify-content: center;
   display: flex;
-  background: rgb(247, 243, 243);
+  background: #fff;
   width: 60%;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  box-shadow: 5px 5px 5px 0px #ccc, -5px -5px 6px 0px #fff;
+  box-shadow: 5px 5px 10px 0px #999;
   margin-bottom: 5rem;
 
   &-icon {
