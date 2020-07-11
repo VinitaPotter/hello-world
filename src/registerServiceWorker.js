@@ -9,7 +9,7 @@ const notifyUserAboutUpdate = (worker) => {
   });
 };
 
-if (process.env.NODE_ENV != "production") {
+if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
       console.log(
