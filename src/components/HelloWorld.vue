@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="heading-news">Latest in Tech for you</div>
+    <!-- <div class="heading-news">Latest in Tech for you</div>
     <div class="news-card has-slimscroll">
       <div class="news" v-for="news in latest_news" :key="news.id">
         <a class="headline" href="news.url">{{news.title}}</a>
@@ -33,7 +33,7 @@
         <p class="content">{{news.description ? news.description : news.content}}</p>
       </div>
       <div class="heading">That's all for now</div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -50,15 +50,8 @@ export default {
     };
   },
   created() {
-    this.getNews();
+    // this.getNews();
     this.getWeather();
-    // if ("serviceWorker" in navigator) {
-    //   navigator.serviceWorker.addEventListener("message", message => {
-    //     if (message.data.event == "location") {
-    //       console.log(message);
-    //     }
-    //   });
-    // }
   },
 
   computed: {
@@ -76,7 +69,7 @@ export default {
       axios.get(url).then(res => (this.latest_news = res.data.articles));
     },
     getWeather() {
-      let url = `http://api.openweathermap.org/data/2.5/weather?q=Pune,in&units=metric&APPID=${process.env.VUE_APP_WEATHER_API_KEY}`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=Pune,in&units=metric&APPID=${process.env.VUE_APP_WEATHER_API_KEY}`;
       axios.get(url).then(res => {
         this.city = res.data.name;
         this.latest_weather = res.data.weather[0];
