@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <div class="weather-card" v-if="latest_weather">
-      <!-- <img :src="`../assets/${weather_icon || 'sun'}.svg`" alt class="weather-card-icon" /> -->
       <img :src="icon" alt class="weather-card-icon" />
       <div class="weather-card-text">
         <div class="heading">{{city}}</div>
