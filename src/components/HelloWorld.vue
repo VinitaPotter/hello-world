@@ -53,7 +53,15 @@ export default {
   created() {
     this.getNews();
     this.getWeather();
+    // if ("serviceWorker" in navigator) {
+    //   navigator.serviceWorker.addEventListener("message", message => {
+    //     if (message.data.event == "location") {
+    //       console.log(message);
+    //     }
+    //   });
+    // }
   },
+
   computed: {
     icon() {
       if (this.weather_icon) {
